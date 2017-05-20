@@ -1,9 +1,14 @@
 package com.example.lukasz.krd_hackaton.JavaClasses;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
@@ -19,8 +24,14 @@ public class MyTessOCR {
     Context context;
 
     public MyTessOCR(Context context) {
-        // TODO Auto-generated constructor stub        this.context = context;
-        datapath = Environment.getExternalStorageDirectory() + "/ocrctz/";
+        // TODO Auto-generated constructor stub
+        this.context = context;
+        boolean hasPermission = (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
+
+        if (!hasPermission) {
+            ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 112);
+        }
+        datapath = Environment.getExternalStorageDirectory() + "/ocr/";
         File dir = new File(datapath + "/tessdata/");
         File file = new File(datapath + "/tessdata/" + "eng.traineddata");
         if (!file.exists()) {

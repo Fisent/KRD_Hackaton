@@ -11,8 +11,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-public class CaptureImage extends Activity {
+import com.example.lukasz.krd_hackaton.JavaClasses.MyTessOCR;
+
+public class CaptureImage extends AppCompatActivity {
 
 
     Button btnTackPic;
@@ -24,27 +27,14 @@ public class CaptureImage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_capture_image);
 
         // Get reference to views
 
-        btnTackPic = (Button) findViewById(R.id.button_takePicture);
         ivThumbnailPhoto = (ImageView) findViewById(R.id.imageView1);
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, TAKE_PICTURE);
 
-
-        btnTackPic.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-
-
-                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, TAKE_PICTURE);
-            }
-
-
-        });
 
     }
 
@@ -56,6 +46,15 @@ public class CaptureImage extends Activity {
             Bitmap photo = (Bitmap) intent.getExtras().get("data");
             ivThumbnailPhoto.setImageBitmap(photo);
             ivThumbnailPhoto.setVisibility(View.VISIBLE);
+            MyTessOCR mTessOCR;
+            mTessOCR=new MyTessOCR(CaptureImage.this);
+            String temp = mTessOCR.getOCRResult(photo);
+            TextView output = (TextView) findViewById(R.id.OCROutput);
+            output.setText(temp);
         }
+
     }
+
+
+
 }
