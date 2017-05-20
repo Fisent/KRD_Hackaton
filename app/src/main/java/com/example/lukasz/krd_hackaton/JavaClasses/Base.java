@@ -1,5 +1,6 @@
 package com.example.lukasz.krd_hackaton.JavaClasses;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -21,6 +22,8 @@ public class Base {
     public static void randomInit(int creds, int minDebtsPerCred, int maxDebtsPerCred, double minRate, double maxRate, double minDebt, double maxDebt){
         Random r = new Random();
 
+        creditors = new ArrayList<Creditor>();
+
         creds = Math.min(creds, 15);
 
         for(int c = 0; c < creds; c++){
@@ -33,6 +36,7 @@ public class Base {
                 Debt debt = new Debt(creditor, getDate(r), getDouble(r, minRate, maxRate), getDouble(r, minDebt, maxDebt), 0);
                 int m = MyDate.dif(debt.date, MyDate.now());
                 debt.additionalDebt = debt.lateRate * m * debt.value;
+                creditor.debts.add(debt);
             }
         }
     }

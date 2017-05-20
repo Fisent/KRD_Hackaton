@@ -20,4 +20,8 @@ public class Debt {
 
     }
 
+    public String toString(){
+        return value + " / " + date + " / " + lateRate + " / " + additionalDebt;
+    }
+
 }

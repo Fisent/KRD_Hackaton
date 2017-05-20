@@ -1,5 +1,6 @@
 package com.example.lukasz.krd_hackaton.JavaClasses;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Creditor {
@@ -8,5 +9,6 @@ public class Creditor {
 
     public Creditor(String name){
         this.name = name;
+        debts = new ArrayList<Debt>();
     }
 }
