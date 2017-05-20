@@ -46,7 +46,7 @@ public class Base {
     }
 
     static MyDate getDate(Random r){
-        int y = Calendar.getInstance().getTime().getYear() - r.nextInt(2) - 1;
+        int y = Calendar.getInstance().getTime().getYear() + 1900 - r.nextInt(2) - 1;
         int m = r.nextInt(12);
 
         return new MyDate(y, m);

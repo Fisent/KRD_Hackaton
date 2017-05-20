@@ -23,12 +23,12 @@ public class MyDate {
     }
 
     public static MyDate now(){
-        int months = Calendar.getInstance().getTime().getYear() * 12 + Calendar.getInstance().getTime().getMonth();
+        int months = (Calendar.getInstance().getTime().getYear() + 1900) * 12 + Calendar.getInstance().getTime().getMonth();
         return new MyDate(0, months);
     }
 
     public String toString(){
-        return (months / 12) + " : " + ((months % 12) + 1);
+        return ((months / 12)) + " : " + ((months % 12) + 1);
     }
 
 }

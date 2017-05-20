@@ -6,7 +6,12 @@ import android.os.Bundle;
 import com.example.lukasz.krd_hackaton.JavaClasses.Base;
 import com.example.lukasz.krd_hackaton.JavaClasses.Creditor;
 import com.example.lukasz.krd_hackaton.JavaClasses.Debt;
+import com.example.lukasz.krd_hackaton.JavaClasses.Income;
 import com.example.lukasz.krd_hackaton.JavaClasses.MyDate;
+import com.example.lukasz.krd_hackaton.JavaClasses.Plan;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AktywnoscKamilaDoTestow extends AppCompatActivity
 {
@@ -21,12 +26,12 @@ public class AktywnoscKamilaDoTestow extends AppCompatActivity
 
         Base.randomInit(4, 1, 5, 0.005, 0.05, 300, 20000);
 
-        System.out.println(MyDate.now() + " ????????????????????");
-        for(Creditor cred: Base.creditors){
-            System.out.println(cred.name);
-            for(Debt debt: cred.debts)
-                System.out.println("\t" + debt.toString());
-        }
+        List<Income> incomes = new ArrayList<>();
+
+        incomes.add(new Income(new MyDate(2017, 6), 500));
+
+        Base.plan = new Plan(Base.creditors, incomes);
+        
 
     }
 }
