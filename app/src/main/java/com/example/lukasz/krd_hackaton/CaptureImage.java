@@ -2,8 +2,6 @@ package com.example.lukasz.krd_hackaton;
 
 
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.media.ExifInterface;
 import android.provider.MediaStore;
 
 import android.os.Bundle;
@@ -53,7 +51,7 @@ public class CaptureImage extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture_image);
-        DATA_PATH=this.getFilesDir() + "/OCR/";
+        DATA_PATH=this.getFilesDir() + "/ocr/";
         String[] paths = new String[] { DATA_PATH, DATA_PATH + "tessdata/" };
 
         for (String path : paths) {
@@ -161,7 +159,6 @@ public class CaptureImage extends Activity {
         options.inSampleSize = 4;
 
         Bitmap bitmap = BitmapFactory.decodeFile(_path, options);
-        //lol
         // _image.setImageBitmap( bitmap );
 
         Log.v(TAG, "Before baseApi");
