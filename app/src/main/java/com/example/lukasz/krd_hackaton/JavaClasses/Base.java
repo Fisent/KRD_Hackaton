@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -52,4 +53,8 @@ public class Base {
         return new MyDate(y, m);
     }
 
+
+    public static void randomInit(){
+        randomInit(4, 1, 5, 0.05, 0.5, 300, 20000);
+    }
 }

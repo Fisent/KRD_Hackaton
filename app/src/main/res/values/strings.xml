@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">KRD_Hackaton</string>
     <string name="stworz_harmonogram_przycisk">Stwórz harmonogram</string>
-    <string name="button_take">Zrob zdjecie</string>
+    <string name="back_button">Wstecz</string>
+    <string name="button_take">Zrob zdjęcie</string>
+    <string name="next_button">Dalej</string>
+    <string name="generate">Generuj</string>
+    <string name="edit">Edytuj</string>
+    <string name="add_income">Dodaj przychód</string>
+    <string name="date">Data: </string>
+    <string name="value">Wartość: </string>
+    <string name="save">Zapisz</string>
 </resources>

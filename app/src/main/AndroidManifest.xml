@@ -21,6 +21,10 @@
         <activity android:name=".IncomeDeatilsActivity"></activity>
         <activity android:name=".CaptureImage">
         </activity>
+        <activity android:name=".DebtListActivity">
+        </activity>
+        <activity android:name=".DebtDetailsActivity">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
