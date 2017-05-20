@@ -14,7 +14,7 @@ public class AktywnoscKamilaDoTestow extends AppCompatActivity
 
         //TUTAJ PISZ KOD, KTORY ODPALI SIE PRZY WLACZENIU TEJ AKTYWNOSCI
 
-        
+
 
     }
 }

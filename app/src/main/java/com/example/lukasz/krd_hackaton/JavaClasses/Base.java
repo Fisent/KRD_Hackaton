@@ -48,7 +48,4 @@ public class Base {
         return new MyDate(y, m);
     }
 
-    static int months(Date date){
-
-    }
 }
