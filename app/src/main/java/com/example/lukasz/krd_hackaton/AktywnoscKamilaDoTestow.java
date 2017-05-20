@@ -3,12 +3,7 @@ package com.example.lukasz.krd_hackaton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.lukasz.krd_hackaton.JavaClasses.Base;
-import com.example.lukasz.krd_hackaton.JavaClasses.Creditor;
-import com.example.lukasz.krd_hackaton.JavaClasses.Debt;
-import com.example.lukasz.krd_hackaton.JavaClasses.Income;
-import com.example.lukasz.krd_hackaton.JavaClasses.MyDate;
-import com.example.lukasz.krd_hackaton.JavaClasses.Plan;
+import com.example.lukasz.krd_hackaton.JavaClasses.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +24,15 @@ public class AktywnoscKamilaDoTestow extends AppCompatActivity
         List<Income> incomes = new ArrayList<>();
 
         incomes.add(new Income(new MyDate(2017, 6), 500));
+        incomes.add(new Income(new MyDate(2017, 8), 500));
+        incomes.add(new Income(new MyDate(2017, 7), 500));
+        incomes.add(new Income(new MyDate(2017, 11), 500));
+        incomes.add(new Income(new MyDate(2017, 3), 500));
+        incomes.add(new Income(new MyDate(2017, 8), 500));
+        incomes.add(new Income(new MyDate(2017, 9), 500));
 
         Base.plan = new Plan(Base.creditors, incomes);
-        
+        System.out.print("dupa");
 
     }
 }
