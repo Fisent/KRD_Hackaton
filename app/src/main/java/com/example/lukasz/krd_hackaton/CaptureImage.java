@@ -161,6 +161,7 @@ public class CaptureImage extends Activity {
         options.inSampleSize = 4;
 
         Bitmap bitmap = BitmapFactory.decodeFile(_path, options);
+        //lol
         // _image.setImageBitmap( bitmap );
 
         Log.v(TAG, "Before baseApi");
