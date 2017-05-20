@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.lukasz.krd_hackaton">
+    package="com.example.lukasz.krd_hackaton">
 
     <application
         android:allowBackup="true"
@@ -9,19 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IncomeListActivity">
-        </activity>
-        <activity android:name=".AktywnoscKamilaDoTestow">
-        </activity>
-        <activity android:name=".IncomeDeatilsActivity">
-        </activity>
+        <activity android:name=".IncomeListActivity"></activity>
+        <activity android:name=".AktywnoscKamilaDoTestow"></activity>
+        <activity android:name=".IncomeDeatilsActivity"></activity>
+        <activity android:name=".CaptureImage"></activity>
     </application>
 
 </manifest>
