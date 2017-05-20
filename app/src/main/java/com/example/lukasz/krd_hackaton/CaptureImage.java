@@ -1,36 +1,39 @@
 package com.example.lukasz.krd_hackaton;
 
-
-import android.graphics.BitmapFactory;
-import android.provider.MediaStore;
-
-import android.os.Bundle;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-
 import java.io.File;
-
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.zip.GZIPInputStream;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
-
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
 
 public class CaptureImage extends Activity {
     public static final String PACKAGE_NAME = "com.example.lukasz.krd_hackaton";
-    public String DATA_PATH;
+    public static final String DATA_PATH = Environment
+            .getExternalStorageDirectory().toString() + "/CaptureImage/";
 
     // You should have the trained data file in assets folder
     // You can get them at:
@@ -51,7 +54,7 @@ public class CaptureImage extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_capture_image);
-        DATA_PATH=this.getFilesDir() + "/ocr/";
+
         String[] paths = new String[] { DATA_PATH, DATA_PATH + "tessdata/" };
 
         for (String path : paths) {
@@ -75,7 +78,7 @@ public class CaptureImage extends Activity {
             try {
 
                 AssetManager assetManager = getAssets();
-                InputStream in = assetManager.open("tessdata/" + lang + ".traineddata");
+                InputStream in = assetManager.open(lang + ".traineddata");
                 //GZIPInputStream gin = new GZIPInputStream(in);
                 OutputStream out = new FileOutputStream(DATA_PATH
                         + "tessdata/" + lang + ".traineddata");
@@ -100,7 +103,7 @@ public class CaptureImage extends Activity {
 
 
         // _image = (ImageView) findViewById(R.id.image);
-        _field = (EditText) findViewById(R.id.text);
+        _field = (EditText) findViewById(R.id.field);
         _button = (Button) findViewById(R.id.button);
         _button.setOnClickListener(new ButtonClickHandler());
 
@@ -156,9 +159,55 @@ public class CaptureImage extends Activity {
         _taken = true;
 
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 4;
+        options.inSampleSize = 2;
 
         Bitmap bitmap = BitmapFactory.decodeFile(_path, options);
+
+        try {
+            ExifInterface exif = new ExifInterface(_path);
+            int exifOrientation = exif.getAttributeInt(
+                    ExifInterface.TAG_ORIENTATION,
+                    ExifInterface.ORIENTATION_NORMAL);
+
+            Log.v(TAG, "Orient: " + exifOrientation);
+
+            int rotate = 0;
+
+            switch (exifOrientation) {
+                case ExifInterface.ORIENTATION_ROTATE_90:
+                    rotate = 90;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_180:
+                    rotate = 180;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_270:
+                    rotate = 270;
+                    break;
+            }
+
+            Log.v(TAG, "Rotation: " + rotate);
+
+            if (rotate != 0) {
+
+                // Getting width & height of the given image.
+                int w = bitmap.getWidth();
+                int h = bitmap.getHeight();
+
+                // Setting pre rotate
+                Matrix mtx = new Matrix();
+                mtx.preRotate(rotate);
+
+                // Rotating Bitmap
+                bitmap = Bitmap.createBitmap(bitmap, 0, 0, w, h, mtx, false);
+            }
+
+            // Convert to ARGB_8888, required by tess
+            bitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
+
+        } catch (IOException e) {
+            Log.e(TAG, "Couldn't correct orientation: " + e.toString());
+        }
+
         // _image.setImageBitmap( bitmap );
 
         Log.v(TAG, "Before baseApi");
