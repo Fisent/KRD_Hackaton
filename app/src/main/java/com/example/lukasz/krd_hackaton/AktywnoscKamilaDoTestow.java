@@ -13,5 +13,8 @@ public class AktywnoscKamilaDoTestow extends AppCompatActivity
         setContentView(R.layout.activity_aktywnosc_kamila_do_testow);
 
         //TUTAJ PISZ KOD, KTORY ODPALI SIE PRZY WLACZENIU TEJ AKTYWNOSCI
+
+        
+
     }
 }
