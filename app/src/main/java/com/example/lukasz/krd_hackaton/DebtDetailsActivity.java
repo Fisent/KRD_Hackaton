@@ -2,11 +2,15 @@ package com.example.lukasz.krd_hackaton;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lukasz.krd_hackaton.JavaClasses.Debt;
 import com.example.lukasz.krd_hackaton.JavaClasses.MyDate;
+
+import org.w3c.dom.Text;
 
 public class DebtDetailsActivity extends AppCompatActivity
 {
@@ -36,13 +40,14 @@ public class DebtDetailsActivity extends AppCompatActivity
 
     private void populate(){
         Debt debt = DebtListActivity.debts.get(index);
-        year.setText(debt.date.getYear());
-        month.setText(debt.date.getMonth());
+        year.setText(debt.date.getYear() + "");
+        month.setText(debt.date.getMonth() + "");
         value.setText(debt.value + "");
         interest.setText(debt.lateRate + "");
+        ((TextView)findViewById(R.id.creditor_text)).setText(debt.creditor.toString());
     }
 
-    public void onSaveClick(){
+    public void onSaveClick(View view){
         int y = -10;
         int m = -10;
         double v = -10;
@@ -71,11 +76,6 @@ public class DebtDetailsActivity extends AppCompatActivity
             debt.date = new MyDate(y, m);
             debt.value = v;
             debt.lateRate = i;
-
-            year.setText("");
-            month.setText("");
-            value.setText("");
-            interest.setText("");
 
             Toast.makeText(this, "Zmieniono!", Toast.LENGTH_SHORT).show();
             onBackPressed();

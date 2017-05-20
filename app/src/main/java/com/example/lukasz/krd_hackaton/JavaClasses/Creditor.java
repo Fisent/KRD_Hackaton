@@ -11,4 +11,9 @@ public class Creditor {
         this.name = name;
         debts = new ArrayList<Debt>();
     }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }

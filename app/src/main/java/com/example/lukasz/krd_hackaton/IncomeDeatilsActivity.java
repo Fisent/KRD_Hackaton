@@ -62,9 +62,6 @@ public class IncomeDeatilsActivity extends AppCompatActivity
             i.value = Double.parseDouble(value.getText().toString());
 
             Toast.makeText(this, "Dodano!", Toast.LENGTH_LONG).show();
-            ((EditText)findViewById(R.id.income_value)).setText("");
-            ((EditText)findViewById(R.id.income_month)).setText("");
-            ((EditText)findViewById(R.id.income_year)).setText("");
 
             onBackPressed();
         }

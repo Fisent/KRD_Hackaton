@@ -13,4 +13,5 @@
     <string name="make">Stwórz</string>
     <string name="due_date">Termin: </string>
     <string name="interest">Odsetki: </string>
+    <string name="creditor">Wierzyciel: </string>
 </resources>
