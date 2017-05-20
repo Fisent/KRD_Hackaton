@@ -1,5 +1,6 @@
 package com.example.lukasz.krd_hackaton;
 
+import android.icu.text.DecimalFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,11 +40,13 @@ public class DebtDetailsActivity extends AppCompatActivity
     }
 
     private void populate(){
+
+        java.text.DecimalFormat df = new java.text.DecimalFormat("##.##");
         Debt debt = DebtListActivity.debts.get(index);
         year.setText(debt.date.getYear() + "");
         month.setText(debt.date.getMonth() + "");
-        value.setText(debt.value + "");
-        interest.setText(debt.lateRate + "");
+        value.setText(df.format(debt.value));
+        interest.setText(df.format(debt.lateRate));
         ((TextView)findViewById(R.id.creditor_text)).setText(debt.creditor.toString());
     }
 
