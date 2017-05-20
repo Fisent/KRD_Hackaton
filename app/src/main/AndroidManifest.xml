@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".ListaPrzychodowActivity">
         </activity>
+        <activity android:name=".AktywnoscKamilaDoTestow">
+        </activity>
     </application>
 
 </manifest>

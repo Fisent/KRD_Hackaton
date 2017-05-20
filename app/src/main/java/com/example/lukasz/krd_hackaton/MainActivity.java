@@ -19,4 +19,9 @@ public class MainActivity extends AppCompatActivity
         Intent i = new Intent(this, ListaPrzychodowActivity.class);
         startActivity(i);
     }
+
+    public void onTestClick(View view){
+        Intent i = new Intent(this, AktywnoscKamilaDoTestow.class);
+        startActivity(i);
+    }
 }
