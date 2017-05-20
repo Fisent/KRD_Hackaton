@@ -26,12 +26,8 @@ public class MyTessOCR {
     public MyTessOCR(Context context) {
         // TODO Auto-generated constructor stub
         this.context = context;
-        boolean hasPermission = (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
-
-        if (!hasPermission) {
-            ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 112);
-        }
-        datapath = Environment.getExternalStorageDirectory() + "/ocr/";
+        File internal = context.getFilesDir();
+        datapath = internal + "/ocr/";
         File dir = new File(datapath + "/tessdata/");
         File file = new File(datapath + "/tessdata/" + "eng.traineddata");
         if (!file.exists()) {
@@ -41,6 +37,7 @@ public class MyTessOCR {
         }
 
         mTess = new TessBaseAPI();
+        mTess.setDebug(true);
         String language = "eng";
         mTess.init(datapath, language);        //Auto only
         mTess.setPageSegMode(TessBaseAPI.PageSegMode.PSM_AUTO_ONLY);
