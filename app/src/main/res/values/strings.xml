@@ -10,4 +10,7 @@
     <string name="date">Data: </string>
     <string name="value">Wartość: </string>
     <string name="save">Zapisz</string>
+    <string name="make">Stwórz</string>
+    <string name="due_date">Termin: </string>
+    <string name="interest">Odsetki: </string>
 </resources>
