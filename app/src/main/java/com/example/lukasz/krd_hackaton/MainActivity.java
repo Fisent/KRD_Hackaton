@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onStworzHarmonogramClick(View view){
-        Intent i = new Intent(this, ListaPrzychodowActivity.class);
+        Intent i = new Intent(this, IncomeListActivity.class);
         startActivity(i);
     }
 
