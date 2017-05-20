@@ -1,10 +1,9 @@
 package com.example.lukasz.krd_hackaton.JavaClasses;
 
-/**
- * Created by lukasz on 20/05/2017.
- */
+import java.util.Date;
 
 public class Income
 {
-
+    public Date date;
+    public double value;
 }
