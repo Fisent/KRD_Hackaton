@@ -7,10 +7,38 @@
     android:layout_height="match_parent"
     tools:context="com.example.lukasz.krd_hackaton.IncomeListActivity">
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onNextClick"
+        android:text="@string/next_button"/>
+
     <ListView
-        android:id="@+id/lista_przychodów"
+        android:id="@+id/income_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onBackClick"
+        android:text="@string/back_button"/>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:onClick="onAddIncomeClick"
+        android:text="@string/add_income"/>
+
 </RelativeLayout>

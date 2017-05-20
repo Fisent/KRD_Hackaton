@@ -18,7 +18,7 @@ public class AktywnoscKamilaDoTestow extends AppCompatActivity
         setContentView(R.layout.activity_aktywnosc_kamila_do_testow);
 
         //TUTAJ PISZ KOD, KTORY ODPALI SIE PRZY WLACZENIU TEJ AKTYWNOSCI
-
+        System.out.print("dupa");
         Base.randomInit(4, 1, 5, 0.005, 0.05, 300, 20000);
 
         List<Income> incomes = new ArrayList<>();
@@ -32,7 +32,7 @@ public class AktywnoscKamilaDoTestow extends AppCompatActivity
         incomes.add(new Income(new MyDate(2017, 9), 500));
 
         Base.plan = new Plan(Base.creditors, incomes);
-        System.out.print("dupa");
+
 
     }
 }
