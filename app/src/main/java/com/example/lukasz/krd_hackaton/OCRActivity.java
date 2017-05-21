@@ -103,6 +103,10 @@ public class OCRActivity extends Activity implements View.OnClickListener {
                     statusMessage.setText("success");
                     textValue.setText(text);
                     Log.d(TAG, "Text read: " + text);
+                    Intent formularz = new Intent(getApplicationContext(),FormAcitivity.class);
+                    formularz.putExtra("ocr",text);
+                    startActivity(formularz);
+
                 } else {
                     statusMessage.setText("fail");
                     Log.d(TAG, "No Text captured, intent data is null");

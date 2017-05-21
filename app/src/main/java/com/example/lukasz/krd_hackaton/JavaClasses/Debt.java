@@ -25,7 +25,7 @@ public class Debt {
 
         DecimalFormat decimalFormat = new DecimalFormat("##.##");
 
-        return creditor.name + "\nKwota: " + decimalFormat.format(value) + "\nData spłaty: " + date.toString() + "\nStopa odsetek: " + decimalFormat.format(lateRate) + "\nOdsetki: " + decimalFormat.format(additionalDebt);
+        return "<b>" + creditor.name + "</b>" + "\nKwota: " + decimalFormat.format(value) + "\nData spłaty: " + date.toString() + "\nStopa odsetek: " + decimalFormat.format(lateRate) + "\nOdsetki: " + decimalFormat.format(additionalDebt);
     }
 
 }

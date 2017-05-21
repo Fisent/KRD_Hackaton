@@ -25,21 +25,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IncomeListActivity"></activity>
-        <activity android:name=".AktywnoscKamilaDoTestow"></activity>
-        <activity android:name=".IncomeDeatilsActivity"></activity>
-                
-        <activity android:name=".DebtListActivity">
-        </activity>
-        <activity android:name=".DebtDetailsActivity">
-        </activity>
-        <activity android:name=".ResultActivity">
-        </activity>
-        <activity android:name=".OCRActivity">
-        </activity>
-        <activity android:name=".OcrCaptureActivity">
-        </activity>
-
+        <activity android:name=".IncomeListActivity" />
+        <activity android:name=".AktywnoscKamilaDoTestow" />
+        <activity android:name=".IncomeDeatilsActivity" />
+        <activity android:name=".DebtListActivity"></activity>
+        <activity android:name=".DebtDetailsActivity"></activity>
+        <activity android:name=".ViewPlanActivity"></activity>
+        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".OCRActivity"></activity>
+        <activity android:name=".OcrCaptureActivity"></activity>
+        <activity android:name=".FormAcitivity"></activity>
     </application>
 
 </manifest>
