@@ -53,6 +53,15 @@
         android:hint="Data ważności dok."
         android:inputType="textPersonName" />
 
+    <EditText
+        android:id="@+id/edit_plec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Płeć"
+        android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/button_register"
         android:layout_width="match_parent"

@@ -20,27 +20,8 @@ import java.util.List;
  * Created by lukasz on 21/05/2017.
  */
 
-public class MySpecialAdapter extends ArrayAdapter<Debt>
+public class MySpecialAdapter
 {
 
-    private List<Debt> debts;
 
-    public MySpecialAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Debt> objects)
-    {
-        super(context, resource, objects);
-        debts = objects;
-    }
-
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent)
-    {
-        Debt debt = debts.get(position);
-        TextView view = (TextView) parent.findViewById(R.id.text1);
-        //TUTAJ PISZ
-
-        view.setText(Html.fromHtml(debt.toString()));
-
-        return super.getView(position, convertView, parent);
-    }
 }

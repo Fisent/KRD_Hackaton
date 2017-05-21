@@ -49,11 +49,14 @@ public class FormAcitivity extends AppCompatActivity {
             j++;
         }
         String rokWaznosci = "20";
-        i+=2;
+        i++;
+        char plec=text.charAt(i);
+        i++;
         for (int j=0; j<2; i++) {
             rokWaznosci += text.charAt(i);
             j++;
         }
+
         rokWaznosci += ".";
         String miesiacWaznosci = "";
         String dzienWaznosci = "";
@@ -87,6 +90,7 @@ public class FormAcitivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.edit_dataWaznosci)).setText(dataWaznosci);
         ((EditText) findViewById(R.id.edit_nazwisko)).setText(nazwisko);
         ((EditText) findViewById(R.id.edit_imie)).setText(imie);
+        ((EditText) findViewById(R.id.edit_plec)).setText(plec+"");
     }
     public void menuActivity(View view){
         Intent i = new Intent(this,MainActivity.class);
