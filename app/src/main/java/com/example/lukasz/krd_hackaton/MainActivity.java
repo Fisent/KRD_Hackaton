@@ -1,5 +1,6 @@
 package com.example.lukasz.krd_hackaton;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,13 +11,13 @@ import com.example.lukasz.krd_hackaton.JavaClasses.Base;
 
 public class MainActivity extends AppCompatActivity
 {
+    public static boolean isComingFromResult = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         if(Base.creditors == null)
             Base.randomInit();
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity
             ((Button)findViewById(R.id.show_plan)).setEnabled(false);
         else
             ((Button)findViewById(R.id.show_plan)).setEnabled(true);
+
+        if(isComingFromResult){
+
+        }
     }
 
     public void onStworzHarmonogramClick(View view){

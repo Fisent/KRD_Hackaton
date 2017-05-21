@@ -29,14 +29,13 @@ public class DebtListActivity extends AppCompatActivity
         setContentView(R.layout.activity_debt_list);
 
         debts = new LinkedList<>();
+        setList();
 
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-
-        setList();
     }
 
     private void setList(){
