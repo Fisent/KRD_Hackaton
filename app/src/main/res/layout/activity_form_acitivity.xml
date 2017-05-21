@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lukasz.krd_hackaton.FormAcitivity">
+
+    <EditText
+        android:id="@+id/edit_imie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Imię"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edit_nazwisko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Nazwisko"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edit_nrDowodu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Seria i nr dowodu"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edit_dataUrodzenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Data urodzenia"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edit_dataWaznosci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Data ważności dok."
+        android:inputType="textPersonName" />
+</LinearLayout>
