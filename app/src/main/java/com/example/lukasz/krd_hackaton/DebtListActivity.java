@@ -12,6 +12,7 @@ import com.example.lukasz.krd_hackaton.JavaClasses.Base;
 import com.example.lukasz.krd_hackaton.JavaClasses.Creditor;
 import com.example.lukasz.krd_hackaton.JavaClasses.Debt;
 import com.example.lukasz.krd_hackaton.JavaClasses.Income;
+import com.example.lukasz.krd_hackaton.JavaClasses.Plan;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -59,5 +60,9 @@ public class DebtListActivity extends AppCompatActivity
             }
         });
 
+    }
+
+    public void OnGenerateClick(View v){
+        Base.plan = Plan.result(Base.creditors, IncomeListActivity.incomes);
     }
 }

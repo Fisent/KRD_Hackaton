@@ -52,6 +52,9 @@ public class Plan {
         if(cash < sum)
             date = null;
 
+        for(int i = 0; i < pays.size(); i++)
+            pays.get(i).priority = i + 1;
+
         return new Result(date, sum, pays);
     }
 
@@ -65,6 +68,10 @@ public class Plan {
 
         public Debt debt;
         public double priority;
+
+        public String toString(){
+            return priority + ". " + debt.toString();
+        }
     }
 
     public static class Result{

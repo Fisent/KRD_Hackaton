@@ -21,7 +21,7 @@ public class Debt {
     }
 
     public String toString(){
-        return value + " / " + date + " / " + lateRate + " / " + additionalDebt;
+        return creditor.name + "\nKwota: " + value + "\nStopa odsetek: " + lateRate;
     }
 
 }

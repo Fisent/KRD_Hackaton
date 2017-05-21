@@ -11,11 +11,11 @@ import java.util.Random;
 public class Base {
 
     public static List<Creditor> creditors;
-    public static Plan plan;
+    public static Plan.Result plan;
 
     static String[] names = new String[]{"White", "Black", "Grey", "Orange", "Blue", "Pink", "Red", "Yellow", "Green", "Brown", "Purple", "Magenta", "Cyan", "Violet", "Plumb"};
 
-    public static void init(List<Creditor> creditors, Plan plan){
+    public static void init(List<Creditor> creditors, Plan.Result plan){
         Base.creditors = creditors;
         Base.plan = plan;
     }
