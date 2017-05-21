@@ -55,6 +55,6 @@ public class Base {
 
 
     public static void randomInit(){
-        randomInit(4, 1, 5, 0.05, 0.5, 300, 20000);
+        randomInit(3, 1, 2, 0.005, 0.05, 100, 1000);
     }
 }
