@@ -120,4 +120,9 @@ public class OCRActivity extends Activity implements View.OnClickListener {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
+    public void onSkipClick(View view){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
 }

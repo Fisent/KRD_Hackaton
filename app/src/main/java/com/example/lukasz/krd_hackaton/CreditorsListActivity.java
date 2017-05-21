@@ -17,7 +17,7 @@ public class CreditorsListActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creditors_list);
 
-
+        populateList();
     }
 
     private void populateList(){

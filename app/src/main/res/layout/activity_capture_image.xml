@@ -57,4 +57,13 @@
         android:checked="false"
         android:text="Flash" />
 
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onSkipClick"
+        android:text="@string/skip"/>
+
 </RelativeLayout>
