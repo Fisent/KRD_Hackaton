@@ -39,6 +39,10 @@ public class ResultActivity extends AppCompatActivity
         TextView date = (TextView) findViewById(R.id.date_of_last_payment);
         date.setText(dateOfEnd.toString());
         // JEŚLI DATA JEST NULLEM, ZA CHINY NIE SPŁACISZ DŁUGÓW POJEBIE
+        if(dateOfEnd != null)
+            date.setText(dateOfEnd.toString());
+        else
+            date.setText("Nigdy!");
     }
 
     public void onMenuClick(View view){
