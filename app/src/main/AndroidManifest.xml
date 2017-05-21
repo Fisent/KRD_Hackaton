@@ -34,9 +34,11 @@
         <activity android:name=".IncomeDeatilsActivity"></activity>
         <activity android:name=".DebtListActivity">
         </activity>
-        <activity android:name=".OCR">
-        </activity>
         <activity android:name=".DebtDetailsActivity">
+        </activity>
+        <activity android:name=".OCRActivity">
+        </activity>
+        <activity android:name=".OcrCaptureActivity">
         </activity>
 
     </application>
