@@ -58,7 +58,7 @@ public class Plan {
         return new Result(date, sum, pays);
     }
 
-    static class Payment{
+    public static class Payment{
 
         public Payment(Debt debt){
             this.debt = debt;

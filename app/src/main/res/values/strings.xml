@@ -3,6 +3,7 @@
     <string name="stworz_harmonogram_przycisk">Stwórz harmonogram</string>
     <string name="back_button">Wstecz</string>
     <string name="button_take">Zrob zdjęcie</string>
+    <string name="menu_button">Menu</string>
     <string name="next_button">Dalej</string>
     <string name="generate">Generuj</string>
     <string name="edit">Edytuj</string>
@@ -21,4 +22,6 @@
     <string name="interest">Odsetki: </string>
     <string name="creditor">Wierzyciel: </string>
     <string name="payment_strategy">Oto Twoja najlepsza kolejność spłat:</string>
+    <string name="sum_to_pay">Suma do spłaty:</string>
+    <string name="date_of_last_payment">Data spłacenia</string>
 </resources>
