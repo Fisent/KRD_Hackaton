@@ -38,6 +38,7 @@ public class ResultActivity extends AppCompatActivity
         MyDate dateOfEnd = Base.plan.splata;
         TextView date = (TextView) findViewById(R.id.date_of_last_payment);
         date.setText(dateOfEnd.toString());
+        // JEŚLI DATA JEST NULLEM, ZA CHINY NIE SPŁACISZ DŁUGÓW POJEBIE
     }
 
     public void onMenuClick(View view){
