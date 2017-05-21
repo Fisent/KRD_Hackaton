@@ -47,7 +47,7 @@ public class DebtListActivity extends AppCompatActivity
         }
 
         ListView list = (ListView) findViewById(R.id.debt_list_view);
-        adapter = new ArrayAdapter<Debt>(this, android.R.layout.simple_list_item_1, debts);
+        adapter = new ArrayAdapter<Debt>(this, R.layout.item_list_huge, debts);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {

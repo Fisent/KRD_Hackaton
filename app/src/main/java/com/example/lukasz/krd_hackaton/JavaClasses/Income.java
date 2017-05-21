@@ -14,6 +14,6 @@ public class Income
 
     @Override
     public String toString(){
-        return "Przychód: " + value + ", data: " + date.toString();
+        return "Przychód: " + value + "\ndata: " + date.toString();
     }
 }

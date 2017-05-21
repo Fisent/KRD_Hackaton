@@ -49,7 +49,7 @@ public class IncomeListActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        adapter = new ArrayAdapter<Income>(getBaseContext(), android.R.layout.simple_list_item_1, incomes);
+        adapter = new ArrayAdapter<Income>(getBaseContext(), R.layout.item_list_huge, incomes);
         list.setAdapter(adapter);
     }
 
