@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
 
-        if(Base.creditors == null || Base.creditors.isEmpty())
+        if(Base.creditors == null)
             Base.randomInit();
 
         if(Base.plan == null)
