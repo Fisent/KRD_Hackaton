@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onCameraClick(View view){
-        Intent i = new Intent(this, CaptureImage.class);
+        Intent i = new Intent(this, OCR.class);
         startActivity(i);
     }
 }

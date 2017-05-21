@@ -4,6 +4,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <meta-data
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:value="ocr" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -28,12 +32,14 @@
         <activity android:name=".IncomeListActivity"></activity>
         <activity android:name=".AktywnoscKamilaDoTestow"></activity>
         <activity android:name=".IncomeDeatilsActivity"></activity>
-        <activity android:name=".CaptureImage">
-        </activity>
         <activity android:name=".DebtListActivity">
+        </activity>
+        <activity android:name=".OCR">
         </activity>
         <activity android:name=".DebtDetailsActivity">
         </activity>
+
     </application>
+
 
 </manifest>
