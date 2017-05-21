@@ -64,5 +64,8 @@ public class DebtListActivity extends AppCompatActivity
 
     public void OnGenerateClick(View v){
         Base.plan = Plan.result(Base.creditors, IncomeListActivity.incomes);
+
+        Intent i = new Intent(this, ResultActivity.class);
+        startActivity(i);
     }
 }
