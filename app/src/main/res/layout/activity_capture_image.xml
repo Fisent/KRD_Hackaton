@@ -1,59 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-   >
+    android:layout_margin="10dp">
 
     <TextView
+        android:id="@+id/status_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Header"
-        android:id="@+id/status_message"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:text="Skanowanie dowodu"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
+        android:id="@+id/text_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/text_value"
-        android:layout_below="@+id/status_message"
+        android:layout_alignEnd="@+id/status_message"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="110dp"
         android:layout_alignRight="@+id/status_message"
-        android:layout_alignEnd="@+id/status_message" />
+        android:layout_below="@+id/status_message"
+        android:layout_marginTop="110dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
+        android:id="@+id/read_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read "
-        android:id="@+id/read_text"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Czytaj dowód " />
 
     <CheckBox
+        android:id="@+id/auto_focus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Focus"
-        android:id="@+id/auto_focus"
-        android:layout_below="@+id/text_value"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_value"
         android:layout_marginTop="66dp"
-        android:checked="true" />
+        android:checked="true"
+        android:text="Auto Focus" />
 
     <CheckBox
+        android:id="@+id/use_flash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Flash"
-        android:id="@+id/use_flash"
-        android:layout_alignTop="@+id/auto_focus"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:checked="false" />
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/auto_focus"
+        android:checked="false"
+        android:text="Flash" />
 
 </RelativeLayout>
