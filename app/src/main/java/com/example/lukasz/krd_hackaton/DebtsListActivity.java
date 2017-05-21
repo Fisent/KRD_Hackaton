@@ -5,7 +5,12 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.lukasz.krd_hackaton.JavaClasses.Base;
+import com.example.lukasz.krd_hackaton.JavaClasses.Creditor;
 import com.example.lukasz.krd_hackaton.JavaClasses.Debt;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class DebtsListActivity extends AppCompatActivity
 {
@@ -21,6 +26,12 @@ public class DebtsListActivity extends AppCompatActivity
 
     private void populateList(){
         ListView list = (ListView) findViewById(R.id.debts_list);
-        list.setAdapter(new ArrayAdapter<Debt>(this, R.layout.item_list_huge));
+        List<Debt> debts = new LinkedList<>();
+        for(Creditor c : Base.creditors){
+            for(Debt d : c.debts){
+                debts.add(d);
+            }
+        }
+        list.setAdapter(new ArrayAdapter<Debt>(this, R.layout.item_list_huge, debts));
     }
 }
