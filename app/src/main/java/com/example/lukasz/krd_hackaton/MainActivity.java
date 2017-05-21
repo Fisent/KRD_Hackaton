@@ -28,7 +28,11 @@ public class MainActivity extends AppCompatActivity
             ((Button)findViewById(R.id.show_plan)).setEnabled(true);
 
         if(isComingFromResult){
-
+            for(int i = 0; i<4; i++){
+                android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
+                manager.popBackStack();
+            }
+            isComingFromResult = false;
         }
     }
 

@@ -46,6 +46,7 @@ public class ResultActivity extends AppCompatActivity
 
     public void onMenuClick(View view){
         Intent i = new Intent(this, MainActivity.class);
+        MainActivity.isComingFromResult = true;
         startActivity(i);
     }
 }
