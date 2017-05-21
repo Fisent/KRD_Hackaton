@@ -73,7 +73,7 @@ public class FormAcitivity extends AppCompatActivity {
         String dataWaznosci = rokWaznosci + miesiacWaznosci + dzienWaznosci;
         i++;
         for (;!Character.isDigit(text.charAt(i)); i++) {
-        }//skiping
+        }//skip
         String nazwisko = "";
         i++;
         for (; text.charAt(i) != '<'; i++) {
