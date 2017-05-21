@@ -18,6 +18,14 @@ public class MyDate {
         months = 12 * y + m;
     }
 
+    public int getYear(){
+        return months / 12;
+    }
+
+    public int getMonth(){
+        return (months % 12) + 1;
+    }
+
     public static int dif(MyDate first, MyDate sec){
         return sec.months - first.months;
     }
@@ -27,8 +35,9 @@ public class MyDate {
         return new MyDate(0, months);
     }
 
+
     public String toString(){
-        return ((months / 12)) + " : " + ((months % 12) + 1);
+        return (months / 12) + " / " + ((months % 12) + 1);
     }
 
 }

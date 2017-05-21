@@ -11,4 +11,9 @@ public class Income
 
     public MyDate date;
     public double value;
+
+    @Override
+    public String toString(){
+        return "Przychód: " + value + "\ndata: " + date.toString();
+    }
 }

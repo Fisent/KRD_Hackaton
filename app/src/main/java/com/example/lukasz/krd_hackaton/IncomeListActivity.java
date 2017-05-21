@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.example.lukasz.krd_hackaton.JavaClasses.Base;
 import com.example.lukasz.krd_hackaton.JavaClasses.Creditor;
 import com.example.lukasz.krd_hackaton.JavaClasses.Income;
+import com.example.lukasz.krd_hackaton.JavaClasses.MyDate;
 
 import java.util.LinkedList;
 
@@ -33,6 +34,7 @@ public class IncomeListActivity extends AppCompatActivity
     @Override
     protected void onResume(){
         super.onResume();
+        setList();
     }
 
     private void setList(){
@@ -47,7 +49,7 @@ public class IncomeListActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        adapter = new ArrayAdapter<Income>(getBaseContext(), android.R.layout.simple_list_item_1, incomes);
+        adapter = new ArrayAdapter<Income>(getBaseContext(), R.layout.item_list_huge, incomes);
         list.setAdapter(adapter);
     }
 
@@ -61,7 +63,7 @@ public class IncomeListActivity extends AppCompatActivity
     }
 
     public void onAddIncomeClick(View view){
-        incomes.add(new Income(null, 0));
+        incomes.add(new Income(new MyDate(2017,4), 0));
         System.out.println("dodano dupa");
 
         adapter.notifyDataSetChanged();

@@ -16,4 +16,8 @@
     <string name="low_storage_error">Ocr dependencies cannot be downloaded due to low device storage</string>
     <string name="title_activity_main">Ocr Detector Sample</string>
     <string name="ok">OK</string>
+    <string name="make">Stwórz</string>
+    <string name="due_date">Termin: </string>
+    <string name="interest">Odsetki: </string>
+    <string name="creditor">Wierzyciel: </string>
 </resources>

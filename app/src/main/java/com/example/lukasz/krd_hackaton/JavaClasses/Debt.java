@@ -1,5 +1,6 @@
 package com.example.lukasz.krd_hackaton.JavaClasses;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Debt {
@@ -21,7 +22,10 @@ public class Debt {
     }
 
     public String toString(){
-        return value + " / " + date + " / " + lateRate + " / " + additionalDebt;
+
+        DecimalFormat decimalFormat = new DecimalFormat("##.##");
+
+        return creditor.name + "\nKwota: " + decimalFormat.format(value) + "\nData spłaty: " + date.toString() + "\nStopa odsetek: " + decimalFormat.format(lateRate) + "\nOdsetki: " + additionalDebt;
     }
 
 }
