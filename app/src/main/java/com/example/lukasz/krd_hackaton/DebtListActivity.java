@@ -21,7 +21,7 @@ public class DebtListActivity extends AppCompatActivity
 {
 
     public static List<Debt> debts;
-    private ArrayAdapter<Debt> adapter;
+    private ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -47,7 +47,7 @@ public class DebtListActivity extends AppCompatActivity
         }
 
         ListView list = (ListView) findViewById(R.id.debt_list_view);
-        adapter = new ArrayAdapter<Debt>(this, R.layout.item_list_huge, debts);
+        adapter = new ArrayAdapter(this, R.layout.item_list_huge, (List) debts);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
