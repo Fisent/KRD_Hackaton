@@ -42,7 +42,17 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onPlanClick(View view){
+        Intent i = new Intent(this, ResultActivity.class);
+        startActivity(i);
+    }
 
+    public void onDebtsListClick(View view){
+        Intent i = new Intent(this, DebtsListActivity.class);
+        startActivity(i);
+    }
+
+    public void onCreditorsListClick(View view){
+        Intent i = new Intent(this, CreditorsListActivity.class);
     }
 
 }
