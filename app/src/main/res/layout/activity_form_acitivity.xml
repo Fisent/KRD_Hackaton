@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:layout_margin="10dp"
     android:orientation="vertical"
     tools:context="com.example.lukasz.krd_hackaton.FormAcitivity">
@@ -51,4 +52,12 @@
         android:ems="10"
         android:hint="Data ważności dok."
         android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Rejestruj"
+        android:onClick="menuActivity"/>
 </LinearLayout>
