@@ -58,19 +58,19 @@ public class Plan {
         return new Result(date, sum, pays);
     }
 
-    static class Payment{
+    public static class Payment{
 
         public Payment(Debt debt){
             this.debt = debt;
 
-            priority = debt.lateRate * Math.pow(debt.value, 0.25) * MyDate.dif(debt.date, MyDate.now());
+            priority = debt.lateRate * (Math.pow(debt.value, - 0.25) + MyDate.dif(debt.date, MyDate.now()));
         }
 
         public Debt debt;
         public double priority;
 
         public String toString(){
-            return priority + ". " + debt.toString();
+            return ((int) priority) + ". " + debt.toString();
         }
     }
 

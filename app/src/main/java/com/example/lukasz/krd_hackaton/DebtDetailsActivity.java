@@ -3,6 +3,7 @@ package com.example.lukasz.krd_hackaton;
 import android.icu.text.DecimalFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -59,11 +60,15 @@ public class DebtDetailsActivity extends AppCompatActivity
         try{
             y = Integer.parseInt(year.getText().toString());
             m = Integer.parseInt(month.getText().toString());
-            v = Double.parseDouble(value.getText().toString());
-            i = Double.parseDouble(interest.getText().toString());
+            String str = value.getText().toString();
+            str = str.replace(',', '.');
+            v = Double.parseDouble(str);
+            str = interest.getText().toString();
+            str = str.replace(',', '.');
+            i = Double.parseDouble(str);
         }
         catch (Exception e){
-
+            e.printStackTrace();
         }
         if(m <= 0 || m >12){
             Toast.makeText(this, "Zły miesiąc", Toast.LENGTH_SHORT).show();
@@ -71,8 +76,8 @@ public class DebtDetailsActivity extends AppCompatActivity
         else if(y < 1900 || y > 2100){
             Toast.makeText(this, "Zły rok", Toast.LENGTH_SHORT).show();
         }
-        else if(v < 0 || i < 0){
-            Toast.makeText(this, "Zła wartość lub odsetki", Toast.LENGTH_SHORT).show();
+        else if(v < 0 || i < 0 || i >= 1){
+            Toast.makeText(this, "Zła wartość lub odsetki" + v + "/" + i, Toast.LENGTH_SHORT).show();
         }
         else{
             Debt debt = DebtListActivity.debts.get(index);
