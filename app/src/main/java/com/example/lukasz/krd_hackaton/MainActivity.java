@@ -53,6 +53,6 @@ public class MainActivity extends AppCompatActivity
 
     public void onCreditorsListClick(View view){
         Intent i = new Intent(this, CreditorsListActivity.class);
+        startActivity(i);
     }
-
 }

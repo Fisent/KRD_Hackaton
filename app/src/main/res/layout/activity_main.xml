@@ -41,6 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:onClick="onDebtsListClick"
         android:text="@string/debts_list"/>
 
     <Button
@@ -49,6 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/button11"
+        android:onClick="onCreditorsListClick"
         android:text="@string/creditors_list"/>
 
 </RelativeLayout>
